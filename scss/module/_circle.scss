@@ -1,0 +1,39 @@
+/* ======= module - circle ======= */
+@mixin circle($size, $bgColor) {
+    width: $size;
+    height: $size;
+    background-color: $bgColor;
+    border-radius: $size/2;
+}
+
+.m-circleTime{
+    position: absolute;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%,-50%);
+    &__outCircle{
+        @include circle(540px, transparent);
+    }
+    &__innerCircle{
+        position: relative;
+    } 
+    &__play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 96px;
+        color: $white;
+        cursor: pointer;
+    }
+    &__cancel{
+        position: absolute;
+        top: 56%;
+        left: 63%;
+        transform: translate(-50%,-50%);
+        background-color: $white;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+    }
+}

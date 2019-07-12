@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pomodoro</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <div class="container l-wrap p-index">
+        <div class="row">
+            <div class="col-8 l-leftSide h-d-flex h-flex-column h-justify-content-between">
+                <section>
+                    <div class="l-addMission h-d-flex h-justify-content-between">
+                        <input type="text" placeholder="add a new mission…">
+                        <button><i class="material-icons">add</i></button>
+                    </div>
+                </section>
+                <section>
+                    <ul>   
+                        <li class="l-activeTask">
+                            <label class="e-control e-control--checkbox">the First thing to do today
+                                <input type="checkbox">
+                                <span class="e-control__indicator"></span>
+                            </label>
+                            <p>
+                                <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                <span class="l-tomatoCount h-d-inline-block"></span>
+                            </p>
+                        </li>
+                    </ul>
+                    <p class="l-time">25:00</p>
+                </section>
+                <section>
+                    <ul>   
+                        <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                            <label class="e-control e-control--checkbox">the second thing to do today
+                                <input type="checkbox">
+                                <span class="e-control__indicator"></span>
+                            </label>
+                            <span><i class="material-icons">play_circle_outline</i></span>
+                        </li>
+                        <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                            <label class="e-control e-control--checkbox">the second thing to do today
+                                <input type="checkbox">
+                                <span class="e-control__indicator"></span>
+                            </label>
+                            <span><i class="material-icons">play_circle_outline</i></span>
+                        </li>
+                        <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                            <label class="e-control e-control--checkbox">the second thing to do today
+                                <input type="checkbox">
+                                <span class="e-control__indicator"></span>
+                            </label>
+                            <span><i class="material-icons">play_circle_outline</i></span>
+                        </li>
+                    </ul>
+                    <p class="l-moreTask">MORE</p>
+                </section>
+            </div>
+            <div class="col-4 l-rightSide h-d-flex h-flex-column h-justify-content-between">
+                <ul class="l-menu">
+                    <li><a href="#"><i class="material-icons">list</i></a></li>
+                    <li><a href="#"><i class="material-icons">insert_chart</i></a></li>
+                    <li><a href="#"><i class="material-icons">library_music</i></a></li>
+                </ul>
+                <div class="l-logo"><span>POMODORO</span></div>
+            </div>
+        </div>
+        <div class="m-circleTime">
+            <div class="m-circleTime__outCircle h-d-flex h-justify-content-center h-align-items-center">
+                <div class="m-circleTime__innerCircle">
+                    <i class="material-icons m-circleTime__play">play_circle_filled</i>
+                    <span class="m-circleTime__cancel h-d-inline-block"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pomodoro</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <div class="container l-wrap p-todolist">
+        <div class="row">
+            <div class="col-5 l-leftSide h-d-flex h-flex-column h-justify-content-between">
+                <section>
+                    <ul class="l-menu">
+                        <li><a href="#"><i class="material-icons">list</i>to-do list</a></li>
+                        <li><a href="#"><i class="material-icons">insert_chart</i>analytics</a></li>
+                        <li><a href="#"><i class="material-icons">library_music</i>ringtones</a></li>
+                    </ul>
+                </section>
+                <section class="l-startTime">
+                    <div class="l-startTime__btn">
+                        <button><i class="material-icons">play_circle_filled</i></button>
+                    </div>
+                    <div class="l-startTime__text h-d-flex h-flex-column h-justify-content-end">
+                        <h3>25:00</h3>
+                        <p>the First thing to do today</p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-5 l-middleSide">
+                <section>
+                    <div class="l-addMission h-d-flex h-justify-content-between">
+                        <input type="text" placeholder="add a new mission…">
+                        <button><i class="material-icons">add</i></button>
+                    </div>
+                </section>
+                <section>
+                    <div class="m-accordion p-todolist__task">
+                        <h2 class="m-accordion__list js-accordion__list js-accordion__active h-d-flex h-justify-content-between h-align-items-center"><span>TO-DO</span><i class="material-icons">arrow_drop_down</i></h2>
+                        <div class="m-accordion__content js-accordion__content">
+                            <ul>   
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox">
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <span><i class="material-icons">play_circle_outline</i></span>
+                                </li>
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox">
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <span><i class="material-icons">play_circle_outline</i></span>
+                                </li>
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox">
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <span><i class="material-icons">play_circle_outline</i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m-accordion p-todolist__done">
+                        <h2 class="m-accordion__list js-accordion__list h-d-flex h-justify-content-between h-align-items-center"><span>DONE</span><i class="material-icons">arrow_drop_down</i></h2>
+                        <div class="m-accordion__content js-accordion__content">
+                            <ul>   
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox" checked>
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <p>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                    </p>  
+                                </li>
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox" checked>
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <p>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                    </p> 
+                                </li>
+                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                    <label class="e-control e-control--checkbox">the second thing to do today
+                                        <input type="checkbox" checked>
+                                        <span class="e-control__indicator"></span>
+                                    </label>
+                                    <p>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                        <span class="l-tomatoCount--done h-d-inline-block"></span>
+                                    </p> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-2 l-rightSide h-d-flex h-flex-column h-justify-content-between">
+                <ul class="l-menu">
+                    <li><a href="#"><i class="material-icons">close</i></a></li>
+                </ul>
+                <div class="l-logo"><span>POMODORO</span></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/all.js"></script>
+</html>

@@ -1,0 +1,29 @@
+/* ======= Variables ======= */
+// color 
+$white: #ffffff;
+$blue: #00A7FF;
+$light-blue: #E5F3FF;
+$dark-blue: #003164;
+$pink: #FF4384;
+$light-pink: #FFEDF7;
+
+// text color
+$text-primary: $dark-blue;
+
+// background color
+$bg-primary: $dark-blue;
+
+// font-family
+$font-style: 'Roboto', sans-serif;
+
+// font-style
+$font-weight-normal: normal;
+$font-weight-bold: 700;
+$font-italic: italic;
+
+// font-size
+$font-size-base: 16px;
+$font-size-md: $font-size-base*1.5;  //24
+$font-size-lg: $font-size-base*2.25;  //36
+$font-size-xl: $font-size-base*4;  //64
+$font-size-xxl: $font-size-base*11;  //176

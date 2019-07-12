@@ -1,0 +1,123 @@
+/* ======= form ======= */
+// input
+@mixin input ($bgColor) {
+    border: none;
+    outline: none;
+    background-color: $bgColor;
+    padding-left: 16px;
+}
+
+// button
+@mixin button ($sizeW, $sizeH, $textColor, $bgColor) {
+    width: $sizeW;
+    height: $sizeH;
+    color: $textColor;
+    background-color: $bgColor;
+    font-family: $font-style;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    outline: none;
+    border: 0;
+    cursor: pointer; 
+}
+
+// custom checkbox
+.e-control {
+    line-height: 24px;
+    text-transform:uppercase;
+    color: $text-primary;
+	position: relative;
+	display: block;
+	// margin-bottom: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.e-control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.e-control__indicator {
+    background-color: transparent;
+    border-radius: 12px;
+    border: 1.5px solid $dark-blue;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 24px;
+	height: 24px;
+	
+}
+
+.e-control--radio .e-control__indicator {
+	border-radius: 50%;
+}
+
+/* Hover and focus states */
+.e-control:hover input ~ .e-control__indicator,
+.e-control input:focus ~ .e-control__indicator {
+	background-color: transparent;
+}
+
+/* Checked state */
+.e-control input:checked ~ .e-control__indicator {
+	background-color: transparent;
+}
+
+/* Hover state whilst checked */
+.e-control:hover input:not([disabled]):checked ~ .e-control__indicator,
+.e-control input:checked:focus ~ .e-control__indicator {
+	background-color: transparent;
+}
+
+/* Disabled state */
+.e-control input:disabled ~ .e-control__indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.e-control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.e-control input:checked ~ .e-control__indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.e-control--checkbox .e-control__indicator:after {
+	top: 4px;
+	left: 8px;
+	width: 3px;
+	height: 8px;
+	transform: rotate(45deg);
+	border: solid $dark-blue;
+	border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.e-control--checkbox input:disabled ~ .e-control__indicator:after {
+	border-color: #7b7b7b;
+}
+
+/* Radio button inner circle */
+.e-control--radio .e-control__indicator:after {
+	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+/* Disabled circle colour */
+.e-control--radio input:disabled ~ .e-control__indicator:after {
+	background: #7b7b7b;
+}

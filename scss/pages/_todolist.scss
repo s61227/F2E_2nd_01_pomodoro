@@ -1,0 +1,35 @@
+/* ======= todolist ======= */
+.p-todolist{
+    &__done{
+        label{
+            text-decoration: line-through;
+        }
+    }
+    .l-tomatoCount--done{
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        background-color: $white;
+    }
+    .l-rightSide{
+        i{
+            font-size: $font-size-base*3;
+        }
+    }
+    .l-task{
+        color: $white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .e-control{
+        color: $white;
+    }
+    .e-control__indicator{
+        border: 1.5px solid $white;
+    }
+    .e-control--checkbox .e-control__indicator:after{
+        border-color: $white;
+    }
+    .p-todolist__task .js-accordion__content{
+        display: block;
+    }
+}

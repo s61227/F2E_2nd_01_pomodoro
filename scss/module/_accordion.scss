@@ -1,0 +1,20 @@
+/* ======= module - accordion ======= */
+.m-accordion{
+    width: 100%;
+    &__list{
+        color: $white;
+        line-height: 44px;
+        background:rgba(255, 255, 255, 0.2);
+        margin: 48px 0 8px;
+        padding: 0 16px;
+        span{
+            display: block;
+            width: 100%;
+            font-size: $font-size-md;   
+        }
+    }
+} 
+.js-accordion__content{
+    display: none;
+    height: auto;
+}

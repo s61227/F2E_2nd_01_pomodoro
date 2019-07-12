@@ -1,0 +1,117 @@
+/* ======= Grid System ======= */
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+// breakpoints (寫在_breakpoint.scss)
+
+// Grid breakpoints
+$g-breakpoints: (
+  // xs: 0,
+  xl: $desktop,
+  md: $pad,
+  sm: $mobile
+) !default;
+
+// Grid containers
+$container-max-widths: (
+  xl: $desktop,
+  md: 100%,
+  sm: 100%,
+) !default;
+
+// Breakpoint
+@mixin media-breakpoint-down($name, $breakpoints: $g-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@function breakpoint-max($name, $breakpoints: $g-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @return if($max != 0, $max, null);
+}
+
+// container
+.container {
+  margin: 0 auto;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left: ($grid-gutter-width / 2);
+  max-width: $desktop;
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-down($breakpoint, $g-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left: ($grid-gutter-width / 2);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter-width / -2);
+  margin-left: ($grid-gutter-width / -2);
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// col
+%col {
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent collapsing
+  padding-right: ($grid-gutter-width / 2);
+  padding-left: ($grid-gutter-width / 2);
+}
+
+.col {
+  @extend %col;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+@for $i from 1 through ($grid-columns) {
+  .col-#{$i} {
+    @extend %col;
+    flex: 0 0 percentage($i / $grid-columns);
+    max-width: percentage($i / $grid-columns);
+  }
+  @each $breakpoint in map-keys($g-breakpoints) {
+    .col-#{$breakpoint}-#{$i} {
+      @extend %col;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($g-breakpoints) {
+  @include media-breakpoint-down(#{$breakpoint}) {
+    @for $i from 1 through ($grid-columns) {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+
+

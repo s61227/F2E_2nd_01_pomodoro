@@ -1,0 +1,202 @@
+/* ======= layout ======= */
+.l-wrap{
+    margin: 50px auto;
+    position: relative;
+    background-color: $bg-primary;
+    .row{
+        min-height: 800px;
+    }
+}
+.l-leftSide{
+    padding: 48px 0 0 85px;
+    li{
+        text-align: left;
+    }
+    a{
+        text-transform: uppercase;
+        font-size: $font-size-lg;
+        color: $white;
+        opacity: 0.2;
+        &:hover{
+            color: $pink;
+            opacity: 1;
+        }
+    }
+    i{
+        margin-right: 8px;
+    }  
+}
+.l-middleSide{
+    section{
+        max-width: 445px;
+    }
+}
+.l-addMission{
+    margin-top: 48px;
+    max-width: 445px;
+    background-color: $white;
+    input{
+        width: 100%;
+        font-size: $font-size-base;
+        @include input($white);
+        &:-moz-placeholder {
+            color: $pink;
+            font-style: $font-italic;
+            font-weight: $font-weight-bold;
+        }
+        &:-ms-input-placeholder {
+            color: $pink;
+            font-style: $font-italic;
+            font-weight: $font-weight-bold;
+        }
+        &::-webkit-input-placeholder {
+            color: $pink;
+            font-style: $font-italic;
+            font-weight: $font-weight-bold;
+        }
+    }
+    
+    button{
+        @include button(56px, 56px, $pink, $white);
+    }
+}
+.l-rightSide{
+    padding: 48px 85px;
+}
+.l-menu{
+    font-size: $font-size-lg;
+    
+    text-align: right;
+    li{
+        margin-bottom: 48px;
+    }
+    a{
+        color: $white;
+    }
+}
+.l-logo{
+    color: $white;
+    text-align: right;
+    font-size: $font-size-md;
+    span{
+        writing-mode: vertical-lr;
+        -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: vertical-lr;
+    }
+}
+.l-time{
+    font-size: $font-size-xxl;
+}
+.l-activeTask{
+    font-size: $font-size-md;
+    p{
+        padding-left: 64px;
+    }
+    .e-control{
+        padding-left: 64px;
+    }
+    .e-control__indicator{
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+    }
+    .e-control--checkbox .e-control__indicator:after {
+        top: 8px;
+        left: 18px;
+        width: 10px;
+        height: 20px;
+        border-width: 0 3px 3px 0;
+    }
+}
+.l-tomatoCount{
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    border: 1px solid  $pink;
+    &--done{
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: $dark-blue;
+    }
+}
+.l-task{
+    max-width: 445px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(100, 3, 0, 0.2);
+    span i{
+        font-size: $font-size-md;
+        cursor: pointer;
+    }
+}
+.l-moreTask{
+    text-align: right;
+    padding: 8px 0 56px;
+    max-width: 445px;
+}
+.l-startTime{
+    text-align: center;
+    max-width: 350px;
+    &__btn{
+        margin-bottom: -50px;
+        button{
+            position: relative;
+            @include button(112px, 112px, $pink, $dark-blue);
+            border-radius: 56px;
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 96px;
+                z-index: 1;
+                &::before{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    content: '';
+                    display: block;
+                    width: 94px;
+                    height: 94px;
+                    border: 2px solid $pink;
+                    border-radius: 47px;
+                }
+                &::after{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    content: '';
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    background-color: $white;
+                    border-radius: 30px;
+                    z-index: -1;
+                }
+            }
+            &:hover{
+                i::before{
+                    border: 2px solid $white; 
+                }
+            }
+        }
+        
+    }
+    &__text{
+        background-color: $light-pink;
+        width: 100%;
+        height: 175px;
+        border-radius: 50% / 100% 100% 0 0;
+        h3{
+            color: $pink;
+            font-size: $font-size-xl;
+        }
+        p{
+            color: $text-primary;
+            text-transform: uppercase;
+            margin: 8px 0 24px;
+        }
+    }
+}
