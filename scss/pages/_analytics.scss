@@ -1,0 +1,37 @@
+/* ======= analytics ======= */
+.p-analytics{  
+    .l-rightSide{
+        i{
+            font-size: $font-size-base*3;
+        }
+    }
+    &__focusTime{
+        h3{
+            color: $white;
+            margin-top: 16px;
+        }
+        p{
+            color: $pink;
+            font-size: $font-size-xl;
+        }
+        small{
+            color: $white;
+            font-size: $font-size-base;
+            opacity: 0.2;
+        }
+    }
+    &__chart{
+        p{
+            font-size: $font-size-base;
+            span{
+                display: inline-block;
+                font-size: $font-size-base;
+            }
+            i{
+                margin: 0 8px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

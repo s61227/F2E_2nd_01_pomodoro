@@ -17,9 +17,9 @@
             <div class="col-5 l-leftSide h-d-flex h-flex-column h-justify-content-between">
                 <section>
                     <ul class="l-menu">
-                        <li><a href="#"><i class="material-icons">list</i>to-do list</a></li>
-                        <li><a href="#"><i class="material-icons">insert_chart</i>analytics</a></li>
-                        <li><a href="#"><i class="material-icons">library_music</i>ringtones</a></li>
+                        <li><a href="todolist.html"><i class="material-icons">list</i>to-do list</a></li>
+                        <li><a href="analytics.html"><i class="material-icons">insert_chart</i>analytics</a></li>
+                        <li><a href="ringtones.html"><i class="material-icons">library_music</i>ringtones</a></li>
                     </ul>
                 </section>
                 <section class="l-startTime">
@@ -35,102 +35,177 @@
             <div class="col-5 l-middleSide">
                 <section>
                     <div class="m-accordion">
-                        <h2 class="m-accordion__list h-d-flex h-justify-content-between h-align-items-center"><span>WORK</span></h2>
+                        <h2 class="m-accordion__list"><span>WORK</span></h2>
                         <div class="m-accordion__content">
-                            <ul>   
-                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
-                                    <label class="e-control e-control--checkbox">none
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">Default
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">alarm
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                </li>
-                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
-                                    <label class="e-control e-control--checkbox">none
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">Default
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">alarm
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                </li>
-                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
-                                    <label class="e-control e-control--checkbox">none
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">Default
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">alarm
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                </li>
-                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
-                                    <label class="e-control e-control--checkbox">none
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">Default
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">alarm
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                </li>
-                                <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
-                                    <label class="e-control e-control--checkbox">none
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">Default
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                    <label class="e-control e-control--checkbox">alarm
-                                        <input type="checkbox">
-                                        <span class="e-control__indicator"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <form>
+                                <ul>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">none
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">Default
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">alarm
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">alert
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">beep
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">bell
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">bird
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">bugle
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">digital
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">drop
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">horn
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">music
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">ring
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">warning
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">whistle
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </form>
                         </div>
                     </div>
                     <div class="m-accordion">
-                        <h2 class="m-accordion__list h-d-flex h-justify-content-between h-align-items-center"><span>BREAK</span></h2>
+                        <h2 class="m-accordion__list"><span>BREAK</span></h2>
                         <div class="m-accordion__content">
-                            
+                            <form>
+                                <ul>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">none
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">Default
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">alarm
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">alert
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">beep
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">bell
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">bird
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">bugle
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">digital
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">drop
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">horn
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">music
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                    <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
+                                        <label class="e-checkWrap">ring
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">warning
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                        <label class="e-checkWrap">whistle
+                                            <input type="radio" name="radio">
+                                            <span class="e-mark e-radiomark"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </form>
                         </div>
                     </div>
                 </section>
             </div>
             <div class="col-2 l-rightSide h-d-flex h-flex-column h-justify-content-between">
                 <ul class="l-menu">
-                    <li><a href="#"><i class="material-icons">close</i></a></li>
+                    <li><a href="index.html"><i class="material-icons">close</i></a></li>
                 </ul>
                 <div class="l-logo"><span>POMODORO</span></div>
             </div>
         </div>
-
     </div>
 </body>
 
 <!-- script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/all.js"></script>
+
 </html>

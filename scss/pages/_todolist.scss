@@ -20,13 +20,13 @@
         color: $white;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .e-control{
+    .e-checkWrap{
         color: $white;
     }
-    .e-control__indicator{
+    .e-checkboxmark {
         border: 1.5px solid $white;
     }
-    .e-control--checkbox .e-control__indicator:after{
+    .e-checkWrap .e-checkboxmark:after{
         border-color: $white;
     }
     .p-todolist__task .js-accordion__content{

@@ -21,103 +21,102 @@
     cursor: pointer; 
 }
 
-// custom checkbox
-.e-control {
-    line-height: 24px;
-    text-transform:uppercase;
-    color: $text-primary;
+// custom checkbox & radio
+/* === 共用部分 === */
+.e-checkWrap {
+	display: inline-block;
 	position: relative;
-	display: block;
-	// margin-bottom: 15px;
-	padding-left: 30px;
 	cursor: pointer;
-}
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	// 可自訂
+	line-height: 24px;
+	padding-left: 30px;
+	font-size: $font-size-base;
+	text-transform: uppercase;
+	color: $text-primary;
 
-.e-control input {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
-}
+	/* On mouse-over, add a grey background color (共用)*/
+	&:Hover input ~ .e-mark{
+		background-color: transparent;
+	}
 
-.e-control__indicator {
-    background-color: transparent;
-    border-radius: 12px;
-    border: 1.5px solid $dark-blue;
-	position: absolute;
-	top: 0px;
-	left: 0;
-	width: 24px;
-	height: 24px;
-	
-}
+	/* Hide the browser's default checkbox (共用)*/
+	input{
+		position: absolute;
+  		opacity: 0;
+  		cursor: pointer;
+  		height: 0;
+		width: 0;
 
-.e-control--radio .e-control__indicator {
-	border-radius: 50%;
-}
+		/* When the checkbox is checked, add a blue background (共用)*/
+		&:checked ~ .e-mark{
+			background-color: transparent;
+		}
 
-/* Hover and focus states */
-.e-control:hover input ~ .e-control__indicator,
-.e-control input:focus ~ .e-control__indicator {
-	background-color: transparent;
+		/* Show the checkmark when checked (共用)*/
+		&:checked ~ .e-mark:after{
+			display: block;
+		}
+	}
 }
-
-/* Checked state */
-.e-control input:checked ~ .e-control__indicator {
-	background-color: transparent;
-}
-
-/* Hover state whilst checked */
-.e-control:hover input:not([disabled]):checked ~ .e-control__indicator,
-.e-control input:checked:focus ~ .e-control__indicator {
-	background-color: transparent;
-}
-
-/* Disabled state */
-.e-control input:disabled ~ .e-control__indicator {
-	pointer-events: none;
-	opacity: .6;
-	background: #e6e6e6;
-}
-
-/* Check mark */
-.e-control__indicator:after {
+/* Create the checkmark/indicator (hidden when not checked)*/
+.e-mark:after {
+	content: "";
 	position: absolute;
 	display: none;
-	content: '';
 }
+/* === Checkbox ===*/
+/* Create a custom checkbox*/
+.e-checkboxmark {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-/* Show check mark */
-.e-control input:checked ~ .e-control__indicator:after {
-	display: block;
+  //可自訂
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1.5px solid $dark-blue;
 }
-
-/* Checkbox tick */
-.e-control--checkbox .e-control__indicator:after {
-	top: 4px;
-	left: 8px;
-	width: 3px;
-	height: 8px;
-	transform: rotate(45deg);
-	border: solid $dark-blue;
-	border-width: 0 2px 2px 0;
+/* Style the checkmark/indicator*/
+.e-checkWrap .e-checkboxmark:after {
+  //可自訂
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid $dark-blue;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
-/* Disabled tick colour */
-.e-control--checkbox input:disabled ~ .e-control__indicator:after {
-	border-color: #7b7b7b;
+/* === Radio === */
+/* Create a custom radio button*/
+.e-radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //可自訂
+  height: 24px;
+  width: 24px;
+  border: 1.5px solid $white;
+  border-radius: 50%; 
 }
-
-/* Radio button inner circle */
-.e-control--radio .e-control__indicator:after {
-	top: 7px;
-	left: 7px;
-	width: 6px;
-	height: 6px;
+/* Style the indicator (dot/circle)*/
+.e-checkWrap .e-radiomark:after {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 	border-radius: 50%;
-	background: #fff;
+	//可自訂
+	width: 12px;
+	height: 12px;
+	background: white;
 }
 
-/* Disabled circle colour */
-.e-control--radio input:disabled ~ .e-control__indicator:after {
-	background: #7b7b7b;
-}
+

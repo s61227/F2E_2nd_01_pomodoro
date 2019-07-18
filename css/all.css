@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ======= Variables ======= */
 /* ======= reset ======= */
 html, body, div, span, applet, object, iframe,
@@ -54,7 +55,8 @@ html, body {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  height: 100%; }
+  height: 100%;
+  text-transform: uppercase; }
 
 /* ======= Grid System ======= */
 .container {
@@ -1261,91 +1263,89 @@ html, body {
     order: 13 !important; } }
 
 /* ======= form ======= */
-.e-control {
+/* === 共用部分 === */
+.e-checkWrap {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   line-height: 24px;
+  padding-left: 30px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #003164;
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  cursor: pointer; }
+  /* On mouse-over, add a grey background color (共用)*/
+  /* Hide the browser's default checkbox (共用)*/ }
+  .e-checkWrap:Hover input ~ .e-mark {
+    background-color: transparent; }
+  .e-checkWrap input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    /* When the checkbox is checked, add a blue background (共用)*/
+    /* Show the checkmark when checked (共用)*/ }
+    .e-checkWrap input:checked ~ .e-mark {
+      background-color: transparent; }
+    .e-checkWrap input:checked ~ .e-mark:after {
+      display: block; }
 
-.e-control input {
+/* Create the checkmark/indicator (hidden when not checked)*/
+.e-mark:after {
+  content: "";
   position: absolute;
-  z-index: -1;
-  opacity: 0; }
+  display: none; }
 
-.e-control__indicator {
+/* === Checkbox ===*/
+/* Create a custom checkbox*/
+.e-checkboxmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
   background-color: transparent;
   border-radius: 12px;
-  border: 1.5px solid #003164;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  width: 24px;
-  height: 24px; }
+  border: 1.5px solid #003164; }
 
-.e-control--radio .e-control__indicator {
-  border-radius: 50%; }
-
-/* Hover and focus states */
-.e-control:hover input ~ .e-control__indicator,
-.e-control input:focus ~ .e-control__indicator {
-  background-color: transparent; }
-
-/* Checked state */
-.e-control input:checked ~ .e-control__indicator {
-  background-color: transparent; }
-
-/* Hover state whilst checked */
-.e-control:hover input:not([disabled]):checked ~ .e-control__indicator,
-.e-control input:checked:focus ~ .e-control__indicator {
-  background-color: transparent; }
-
-/* Disabled state */
-.e-control input:disabled ~ .e-control__indicator {
-  pointer-events: none;
-  opacity: .6;
-  background: #e6e6e6; }
-
-/* Check mark */
-.e-control__indicator:after {
-  position: absolute;
-  display: none;
-  content: ''; }
-
-/* Show check mark */
-.e-control input:checked ~ .e-control__indicator:after {
-  display: block; }
-
-/* Checkbox tick */
-.e-control--checkbox .e-control__indicator:after {
-  top: 4px;
-  left: 8px;
-  width: 3px;
-  height: 8px;
+/* Style the checkmark/indicator*/
+.e-checkWrap .e-checkboxmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #003164;
+  border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  border: solid #003164;
-  border-width: 0 2px 2px 0; }
+  transform: rotate(45deg); }
 
-/* Disabled tick colour */
-.e-control--checkbox input:disabled ~ .e-control__indicator:after {
-  border-color: #7b7b7b; }
+/* === Radio === */
+/* Create a custom radio button*/
+.e-radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 1.5px solid #ffffff;
+  border-radius: 50%; }
 
-/* Radio button inner circle */
-.e-control--radio .e-control__indicator:after {
-  top: 7px;
-  left: 7px;
-  width: 6px;
-  height: 6px;
+/* Style the indicator (dot/circle)*/
+.e-checkWrap .e-radiomark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: #fff; }
-
-/* Disabled circle colour */
-.e-control--radio input:disabled ~ .e-control__indicator:after {
-  background: #7b7b7b; }
+  width: 12px;
+  height: 12px;
+  background: white; }
 
 /* ======= module - circle ======= */
 .m-circleTime {
@@ -1395,7 +1395,6 @@ html, body {
     padding: 0 16px; }
     .m-accordion__list span {
       display: block;
-      width: 100%;
       font-size: 24px; }
 
 .js-accordion__content {
@@ -1486,22 +1485,29 @@ html, body {
 .l-time {
   font-size: 176px; }
 
-.l-activeTask {
+.l-activeTask p {
+  padding-left: 64px; }
+
+.l-activeTask .e-checkWrap {
+  padding-left: 64px;
+  margin-bottom: 12px;
   font-size: 24px; }
-  .l-activeTask p {
-    padding-left: 64px; }
-  .l-activeTask .e-control {
-    padding-left: 64px; }
-  .l-activeTask .e-control__indicator {
-    width: 48px;
-    height: 48px;
-    border-radius: 24px; }
-  .l-activeTask .e-control--checkbox .e-control__indicator:after {
-    top: 8px;
-    left: 18px;
-    width: 10px;
-    height: 20px;
-    border-width: 0 3px 3px 0; }
+
+.l-activeTask .e-checkboxmark {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px; }
+
+.l-activeTask .e-checkWrap .e-checkboxmark:after {
+  left: 16px;
+  top: 7px;
+  width: 10px;
+  height: 20px;
+  border: solid #003164;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
 
 .l-tomatoCount {
   width: 8px;
@@ -1632,13 +1638,13 @@ html, body {
   color: #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
-.p-todolist .e-control {
+.p-todolist .e-checkWrap {
   color: #ffffff; }
 
-.p-todolist .e-control__indicator {
+.p-todolist .e-checkboxmark {
   border: 1.5px solid #ffffff; }
 
-.p-todolist .e-control--checkbox .e-control__indicator:after {
+.p-todolist .e-checkWrap .e-checkboxmark:after {
   border-color: #ffffff; }
 
 .p-todolist .p-todolist__task .js-accordion__content {
@@ -1649,22 +1655,43 @@ html, body {
   color: #ffffff;
   border-bottom: none; }
 
-.p-ringtones .e-control {
-  color: #ffffff; }
+.p-ringtones .l-rightSide i {
+  font-size: 48px; }
 
-.p-ringtones .e-control__indicator {
-  border: 1.5px solid #ffffff; }
+.p-ringtones .e-checkWrap {
+  color: #ffffff;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
 
-.p-ringtones .e-control--checkbox .e-control__indicator:after {
-  border-color: #FF4384; }
-
-.p-ringtones .e-control--checkbox .e-control__indicator:after {
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
+.p-ringtones .e-radiomark:after {
   background-color: #FF4384; }
+
+.p-ringtones .e-checkWrap input:checked ~ .e-mark {
+  border: 1.5px solid #FF4384; }
+
+/* ======= analytics ======= */
+.p-analytics .l-rightSide i {
+  font-size: 48px; }
+
+.p-analytics__focusTime h3 {
+  color: #ffffff;
+  margin-top: 16px; }
+
+.p-analytics__focusTime p {
+  color: #FF4384;
+  font-size: 64px; }
+
+.p-analytics__focusTime small {
+  color: #ffffff;
+  font-size: 16px;
+  opacity: 0.2; }
+
+.p-analytics__chart p {
+  font-size: 16px; }
+  .p-analytics__chart p span {
+    display: inline-block;
+    font-size: 16px; }
+  .p-analytics__chart p i {
+    margin: 0 8px;
+    cursor: pointer; }
