@@ -55,7 +55,6 @@
 		&:checked ~ .e-mark{
 			background-color: transparent;
 		}
-
 		/* Show the checkmark when checked (共用)*/
 		&:checked ~ .e-mark:after{
 			display: block;
