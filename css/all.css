@@ -1509,12 +1509,12 @@ html, body {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-.l-tomatoCount {
+.l-tomato {
   width: 8px;
   height: 8px;
   border-radius: 4px;
   border: 1px solid #FF4384; }
-  .l-tomatoCount--done {
+  .l-tomato--done {
     width: 8px;
     height: 8px;
     border-radius: 4px;
@@ -1625,7 +1625,7 @@ html, body {
 .p-todolist__done label {
   text-decoration: line-through; }
 
-.p-todolist .l-tomatoCount--done {
+.p-todolist .l-tomato--done {
   width: 12px;
   height: 12px;
   border-radius: 6px;

@@ -29,15 +29,15 @@
                                 <span class="e-mark e-checkboxmark"></span>
                             </label>
                             <p>
-                                <span class="l-tomatoCount--done h-d-inline-block"></span>
-                                <span class="l-tomatoCount h-d-inline-block"></span>
+                                <span class="l-tomato--done h-d-inline-block"></span>
+                                <span class="l-tomato h-d-inline-block"></span>
                             </p>
                         </li>
                     </ul>
                     <p class="l-time">25:00</p>
                 </section>
                 <section>
-                    <ul>   
+                    <ul class="p-index__todo">   
                         <li class="l-task h-d-flex h-justify-content-between h-align-items-center">
                             <label class="e-checkWrap">the First thing to do today
                                 <input type="checkbox">
@@ -85,5 +85,14 @@
 
 <!-- script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/all.js"></script>
+<script>
+$('.e-checkWrap').click(function(){
+    var checkboxStatus = $(this).find('input[type="checkbox"]:checked').val();
+    if(checkboxStatus == 'on'){
+        $(this).css('text-decoration', 'line-through');
+    }else{
+        $(this).css('text-decoration', 'none');  
+    }
+});
+</script>
 </html>

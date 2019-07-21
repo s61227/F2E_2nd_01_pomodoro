@@ -114,7 +114,7 @@
                             </form>
                         </div>
                     </div>
-                    <!-- <div class="m-accordion">
+                    <div class="m-accordion">
                         <h2 class="m-accordion__list"><span>BREAK</span></h2>
                         <div class="m-accordion__content">
                             <form>
@@ -192,7 +192,7 @@
                                 </ul>
                             </form>
                         </div>
-                    </div> -->
+                    </div>
                 </section>
             </div>
             <div class="col-2 l-rightSide h-d-flex h-flex-column h-justify-content-between">
@@ -207,6 +207,25 @@
 
 <!-- script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/all.js"></script>
+<script>
+    // radio 效果
+    var musicArry = document.querySelectorAll('.p-ringtones .e-checkWrap');
+    var thisMusic = document.querySelector('audio');
+    musicArry.forEach(element => {
+        element.addEventListener('click', playMusic, false);
+    });
+
+    function playMusic(e){
+        if(e.target.tagName === 'INPUT'){
+            if(e.target.value !== 'on'){
+                var src = 'music/'+e.target.value+'.mp3';
+                thisMusic.setAttribute('src', src);
+                thisMusic.play();
+            }else{
+                thisMusic.pause();
+            }
+        } 
+    };
+</script>
 
 </html>
